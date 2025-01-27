@@ -1,0 +1,270 @@
+/* 
+.App {
+  text-align: center;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #1e1e2f, #6a0572, #c70039);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  animation: background-pulse 6s infinite alternate;
+}
+
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  filter: drop-shadow(0 5px 15px rgba(255, 87, 51, 0.7));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-bounce infinite 2s ease-in-out;
+  }
+}
+
+.App-header {
+  
+  padding: 20px;
+  font-size: calc(14px + 2vmin);
+  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.App-header:hover {
+  transform: scale(1.02);
+}
+
+
+@keyframes App-logo-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes background-pulse {
+  0% {
+    background: linear-gradient(135deg, #1e1e2f, #6a0572, #c70039);
+  }
+  100% {
+    background: linear-gradient(135deg, #6a0572, #ff5f6d, #ffdd57);
+  }
+}
+
+video {
+  border: 4px solid #ff5733;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+  max-width: 80%;
+  margin-top: 20px;
+  animation: video-glow 3s infinite alternate;
+}
+
+video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 50px rgba(255, 87, 51, 0.9);
+}
+
+@keyframes video-glow {
+  0% {
+    box-shadow: 0 8px 30px rgba(255, 87, 51, 0.5);
+  }
+  100% {
+    box-shadow: 0 12px 40px rgba(255, 87, 51, 0.9);
+  }
+}
+
+
+#button {
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #ff5733, #ffdd57);
+  color: #1e1e2f;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+#button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #ff6f61, #ffd700);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px #ffd700;
+} */
+
+
+
+
+
+
+.App {
+  text-align: center;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ff66b2, #66ccff); /* Solid gradient from pink to blue */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  animation: background-pulse 10s infinite ease-in-out; /* Smooth transition of gradient colors */
+}
+
+@keyframes background-pulse {
+  /* 0% {
+    background: linear-gradient(135deg, #ff66b2, #66ccff); /* Initial pink to blue */
+  
+
+    0% {
+      background: linear-gradient(135deg, #ff66b2, #66ccff); /* Soft pink to sky blue */
+    }
+    20% {
+      background: linear-gradient(135deg, #ff80c4, #66aaff); /* Lighter pink and sky blue */
+    }
+    40% {
+      background: linear-gradient(135deg, #ff99cc, #5c99ff); /* Faded pink to lavender blue */
+    }
+    60% {
+      background: linear-gradient(135deg, #ff66b2, #80c9ff); /* Soft pink and light azure blue */
+    }
+    80% {
+      background: linear-gradient(135deg, #ff80c4, #7eb8ff); /* Light pink and periwinkle blue */
+    }
+    100% {
+      background: linear-gradient(135deg, #ff66b2, #66ccff); /* Reset to soft pink and sky blue */
+    }
+  }
+  
+
+
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 20px rgba(255, 105, 180, 0.8)) drop-shadow(0 8px 20px rgba(0, 191, 255, 0.8)); /* Neon glow effect */
+}
+
+video {
+  border: 4px solid transparent;
+  border-radius: 20px;
+  padding: 5px;
+  background: linear-gradient(90deg, #f7c8e0, #a7c7e7); /* Light pink to sky blue */
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  max-width: 80%;
+  margin-top: 20px;
+  box-shadow: 0 8px 40px rgba(0, 191, 255, 0.8), 0 0 20px rgba(255, 105, 180, 0.8); /* Neon blue and pink glow */
+  animation: neon-border 10s infinite alternate; /* Glowing border animation */
+}
+
+@keyframes neon-border {
+  0% {
+    box-shadow: 0 8px 40px rgba(0, 191, 255, 0.6), 0 0 15px rgba(255, 105, 180, 0.6);
+  }
+  50% {
+    box-shadow: 0 12px 50px rgba(0, 191, 255, 0.9), 0 0 25px rgba(255, 105, 180, 0.9);
+  }
+  100% {
+    box-shadow: 0 8px 40px rgba(0, 191, 255, 0.6), 0 0 15px rgba(255, 105, 180, 0.6);
+  }
+}
+
+#button {
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #fc71d2, #82c9f5); /* Light pink to sky blue */
+  color: white;
+  border: 4px solid transparent;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 30px rgba(45, 127, 155, 0.7), 0 0 15px rgba(241, 10, 125, 0.7);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+#button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(37, 174, 220, 0.9), 0 0 25px rgba(171, 13, 92, 0.9);
+}
+
+ul{
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  display:flex;
+  
+}
+ul li{
+  list-style:none;
+  width:40px;
+  height:40px;
+  background:#fff;
+  border-radius:50%;
+  animation:grow 1.6s ease-in-out infinite;
+}
+  @keyframes grow
+  {
+    0% , 40% , 100%
+    {
+      transform:scale(0.2);
+    }
+    20%{
+       transform:scale(1);
+
+    }
+  }
+
+ul li:nth-child(1){
+  animation-delay:-1.4s;
+  background:#ffff00;
+  box-shadow:0 0 50px #ffff00;
+  
+}
+ul li:nth-child(2){
+  animation-delay:-1.2s;
+  background:#76ff03;
+  box-shadow:0 0 50px #76ff03;
+  
+}
+ul li:nth-child(3){
+  animation-delay:-1s;
+  background:#f06292;
+  box-shadow:0 0 50px #f06292;
+  
+}
+ul li:nth-child(4){
+  animation-delay:-0.8s;
+  background:#4fc3f7;
+  box-shadow:0 0 50px #4fc3f7;
+  
+}
+ul li:nth-child(5){
+  animation-delay:-0.6s;
+  background:#ba68c8;
+  box-shadow:0 0 50px #ba68c8;
+  
+}
+ul li:nth-child(6){
+  animation-delay:-0.4s;
+  background:#f57c00;
+  box-shadow:0 0 50px #f57c00;
+  
+}
+ul li:nth-child(7){
+  animation-delay:-0.2s;
+  background:#673ab7;
+  box-shadow:0 0 50px #673ab7;
+  
+}

@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotify</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="apple-touch-icon" href="Elogoicon.png" />
+  <link rel="icon" href="Elogoicon.png" />
+  <style>
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: linear-gradient(135deg, #c80566, #0482c1);
+      color: white;
+      margin: 0;
+    }
+    
+  
+
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(85, 57, 80, 0.8);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      
+    }
+
+    #navbar input {
+      height: 30px;
+      padding: 5px;
+      width: 400px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #navbar img {
+      height: 70px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    div h2{
+      font-size: 35px;
+      color: #ccc;
+      margin: 5px 0;
+      margin-left: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .slider-wrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+      display: flex;
+      padding: 10px 0;
+      scroll-behavior: smooth;
+      /* margin: 2px; */
+
+    }
+
+    
+
+  .card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000; */
+  width: 100%; /* Ensures the card takes its parent width */
+  text-align: center;
+}
+
+/* 0 4px 8px rgba(0, 0, 0, 0.2) */
+.card img {
+  width: 100%; 
+  height: 250px; /* Fixed height to ensure all images are of the same size */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 8px;
+  display: block;
+}
+  
+
+.card h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+
+
+    /* Add horizontal scrollbar styling */
+    .slider-wrapper::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .slider-wrapper::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+
+    .slider-wrapper::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  </style>
+
+<!-- <script defer src="C:/Users/purva/OneDrive/Desktop/major spotify/music front/music.js"></script> -->
+
+  
+</head>
+<body>
+
+  <nav id="navbar">
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+    <img src="Elogoicon.png" alt="Logo">
+    <input type="text" placeholder="Search Songs">
+    <a href="index.html" class="material-icons" style="font-size:50px;color:red">camera_alt</a>
+  </nav>
+
+  <div><h2>Latest Song</h2></div>
+
+  <section>
+    <div class="slider-wrapper"></div>
+  </section>
+
+  <section>
+    <div class="slider-wrapper slider2"></div>
+  </section>
+
+  <section>
+    <div class="slider-wrapper artist">
+      
+    </div>
+  </section>
+  
+  
+
+   <script>
+    // Fetch video data and display as horizontal cards
+    function getVideos() {
+      const sliderWrapper = document.querySelector('.slider-wrapper');
+
+
+      // https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UUq-Fj5jknLsUf-MWSy4_brA&key=AIzaSyAllKYxKhvsGtUSu88y7yC_jJ43bWDiUbA
+
+      fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UU_A7K2dXFsTMAciGmnNxy-Q&key=AIzaSyAllKYxKhvsGtUSu88y7yC_jJ43bWDiUbA')
+        .then(res => res.json())
+        .then(data => {
+          data.items.forEach(el => {
+            sliderWrapper.innerHTML += `
+              <div class="card">
+                <a href="https://www.youtube.com/watch?v=${el.snippet.resourceId.videoId}" target="_blank">
+                  <img src="${el.snippet.thumbnails.high.url}" alt="Video tubnel">
+                  <h3>${el.snippet.title}</h3>
+                </a>
+              </div>`;
+          });
+        })
+        .catch(err => console.error('Error fetching videos:', err));
+    }
+
+    // Wait for the page to load before fetching videos
+    document.addEventListener('DOMContentLoaded', getVideos);
+
+
+
+
+    function getVideoss() {
+      const sliderWrapper = document.querySelector('.slider2');
+      
+
+      fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=30&playlistId=UUq-Fj5jknLsUf-MWSy4_brA&key=AIzaSyAllKYxKhvsGtUSu88y7yC_jJ43bWDiUbA')
+        .then(res => res.json())
+        .then(data => {
+          data.items.forEach(el => {
+            sliderWrapper.innerHTML += `
+              <div class="card">
+                <a href="https://www.youtube.com/watch?v=${el.snippet.resourceId.videoId}" target="_blank">
+                  <img src="${el.snippet.thumbnails.high.url}" alt="Video tubnel">
+                  <h3>${el.snippet.title}</h3>
+                </a>
+              </div>`;
+          });
+        })
+        .catch(err => console.error('Error fetching videos:', err));
+    }
+
+    // Wait for the page to load before fetching videos
+    document.addEventListener('DOMContentLoaded', getVideoss);
+  </script> 
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+      <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->

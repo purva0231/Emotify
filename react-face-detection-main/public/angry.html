@@ -1,0 +1,429 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotify</title>
+    <link rel="icon" href="Elogoicon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            /* background: radial-gradient(circle at 50% 50%, #ff007c, transparent),
+                        radial-gradient(circle at 80% 30%, #00fff7, transparent); */
+            color: #fff;
+            overflow: hidden; 
+            height: 100vh; 
+            background: linear-gradient(135deg, #ff66b2, #66ccff);
+        }
+
+        @keyframes background-pulse {
+  /* 0% {
+    background: linear-gradient(135deg, #ff66b2, #66ccff); /* Initial pink to blue */
+  
+
+    0% {
+      background: linear-gradient(135deg, #ff66b2, #66ccff); /* Soft pink to sky blue */
+    }
+    20% {
+      background: linear-gradient(135deg, #ff80c4, #66aaff); /* Lighter pink and sky blue */
+    }
+    40% {
+      background: linear-gradient(135deg, #ff99cc, #5c99ff); /* Faded pink to lavender blue */
+    }
+    60% {
+      background: linear-gradient(135deg, #ff66b2, #80c9ff); /* Soft pink and light azure blue */
+    }
+    80% {
+      background: linear-gradient(135deg, #ff80c4, #7eb8ff); /* Light pink and periwinkle blue */
+    }
+    100% {
+      background: linear-gradient(135deg, #ff66b2, #66ccff); /* Reset to soft pink and sky blue */
+    }
+  }
+        #loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            /* background: radial-gradient(circle at 50% 50%, #ff007c, transparent),
+                        radial-gradient(circle at 80% 30%, #00fff7, transparent); */
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            animation: fadeOut 1s ease-out 4s forwards; 
+        }
+
+       
+        
+
+        .container {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.dash {
+  margin: 0 15px;
+  width: 35px;
+  height: 15px;
+  border-radius: 8px;
+  background: #f8e2f7;
+  box-shadow: 0 0 10px 0 #FECDFF;
+}
+
+.uno {
+  margin-right: -18px;
+  transform-origin: center left;
+  animation: spin 3s linear infinite;  
+}
+
+.dos {
+  transform-origin: center right;
+  animation: spin2 3s linear infinite;
+  animation-delay: .2s;
+}
+
+.tres {
+  transform-origin: center right;
+  animation: spin3 3s linear infinite;
+  animation-delay: .3s;
+}
+
+.cuatro {
+  transform-origin: center right;
+  animation: spin4 3s linear infinite;
+  animation-delay: .4s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  30% {
+    transform: rotate(370deg);
+  }
+  35% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-180deg);
+  }
+  35% {
+    transform: rotate(-190deg);
+  }
+  40% {
+    transform: rotate(-180deg);
+  }
+  78% {
+    transform: rotate(-180deg);
+  }
+  95% {
+    transform: rotate(-360deg);
+  }
+  98% {
+    transform: rotate(-370deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  27% {
+    transform: rotate(0deg);  
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  45% {
+    transform: rotate(190deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  62% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  80% {
+    transform: rotate(370deg);
+  }
+  85% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  38% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-360deg);
+  }
+  65% {
+    transform: rotate(-370deg);
+  }
+  75% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  align-items: center;
+  filter: drop-shadow(0 8px 20px rgba(255, 105, 180, 0.8)) drop-shadow(0 8px 20px rgba(0, 191, 255, 0.8)); /* Neon glow effect */
+}
+
+        #content {
+            display: none; 
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #navbar input {
+            height: 30px;
+            padding: 5px;
+            width: 400px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        #navbar img {
+            height: 50px;
+        }
+
+        #player {
+            display: block;
+            margin: 80px auto 20px;
+            max-width: 640px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .slider-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        #instruction {
+            text-align: center;
+            font-size: 1.2rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+            position: fixed;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        .pick {
+        font-size: 2rem; /* Adjust the size as needed */
+        text-align: center;
+        color: #fb1bd9; /* White text color */
+        font-weight: bold;
+        margin: 20px 0;
+        text-shadow: 0 0 5px #fff, 
+                     0 0 10px #fff, 
+                     0 0 15px #fff, 
+                     0 0 20px #00fff7, 
+                     0 0 25px #00fff7, 
+                     0 0 30px #00fff7;
+        animation: glow 1.5s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="loader">
+        <div>
+          <img src="Elogoicon.png" alt="">
+        <h3 class="pick">Got that angry vibe 😤 <br> This one's all for you..</h3>  
+           <div class="container">
+            <div class="dash uno"></div>
+            <div class="dash dos"></div>
+            <div class="dash tres"></div>
+            <div class="dash cuatro"></div>
+          </div>
+        </div>
+    </div>
+
+   
+    <div id="content">
+        <nav id="navbar">
+          <a href="manual.html"><img src="Elogoicon.png" alt="Logo"></a>
+            <input type="text" placeholder="Search Songs">
+            <a href="index.html" class="material-icons" style="font-size:50px;color:red">camera_alt</a>
+        </nav>
+        
+
+        <div id="instruction">Your sound is muted! Unmute to enjoy the music.</div>
+
+
+        <section>
+            <div id="player"></div>
+        </section>
+        <section>
+            <div class="slider-wrapper two"></div>
+        </section>
+    </div>
+
+    <script>
+
+const instruction = document.getElementById('instruction');
+            setTimeout(() => {
+                instruction.style.display = 'none'; 
+            }, 10000);
+
+        
+        setTimeout(() => {
+           
+            const loader = document.getElementById('loader');
+            loader.style.display = 'none';
+
+            
+            document.body.style.overflow = 'auto';
+
+          
+            const content = document.getElementById('content');
+            content.style.display = 'block';
+
+            setTimeout(() => {
+                content.style.opacity = 1;
+            }, 100); 
+        }, 5000);
+
+        
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '390',
+                width: '640',
+                videoId: '8afBXZawfQw',
+                playerVars: {
+                    autoplay: 1,
+                    playsinline: 1,
+                    controls: 1,
+                    modestbranding: 1,
+                    rel: 0,
+                    mute: 1
+                },
+                events: {
+                    onReady: onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+
+        function getVideoss() {
+            const sliderWrapper = document.querySelector('.two');
+       
+               fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=15&playlistId=PLxNm0dqHxmlupV3dr7uq4Rl8L5nwlGKQA&key=AIzaSyAllKYxKhvsGtUSu88y7yC_jJ43bWDiUbA') .then(res => res.json())
+                .then(data => {
+                    if (data.items && data.items.length > 0) {
+                        data.items.forEach(el => {
+                            sliderWrapper.innerHTML += `
+                                <div class="card">
+                                    <a href="https://www.youtube.com/watch?v=${el.snippet.resourceId.videoId}" target="_blank">
+                                        <img src="${el.snippet.thumbnails.high.url}" alt="Video thumbnail">
+                                        <h3>${el.snippet.title}</h3>
+                                    </a>
+                                </div>`;
+                        });
+                    }
+                })
+                .catch(err => console.error('Error fetching videos:', err));
+        }
+        document.addEventListener('DOMContentLoaded', getVideoss);
+
+
+    </script>
+</body>
+</html>
