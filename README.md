@@ -75,6 +75,7 @@ The emotion recognition module is powered by a custom Convolutional Neural Netwo
 
 ---
 
+
 ## System Workflow
 
 ```text
@@ -112,6 +113,47 @@ User Input (Image Upload / Webcam)
      
 
 ---
+
+## 📸 Results
+
+### 1️⃣ Home Page
+
+The application allows users to start real-time emotion detection using a webcam or upload an image for analysis.
+
+<p align="center">
+  <img src="results/home_page.png" alt="Home Page" width="800">
+</p>
+
+---
+
+### 2️⃣ Real-Time Webcam Capture
+
+Users are provided with a countdown window to adjust their position before the image is automatically captured for emotion analysis.
+
+<p align="center">
+  <img src="results/webcam_capture.png" alt="Webcam Capture" width="800">
+</p>
+
+---
+
+### 3️⃣ Emotion Detection
+
+The CNN model analyzes the facial expression and predicts the user's emotional state.
+
+<p align="center">
+  <img src="results/emotion_detection.png" alt="Emotion Detection" width="800">
+</p>
+
+---
+
+### 4️⃣ Music Recommendation
+
+Based on the detected emotion, the system fetches and plays relevant songs using the YouTube API while also displaying additional recommendations.
+
+<p align="center">
+  <img src="results/music_recommendation.png" alt="Music Recommendation" width="800">
+</p>
+
 
 ## 📂 Installation & Setup
 
