@@ -120,9 +120,11 @@ User Input (Image Upload / Webcam)
 
 The application allows users to start real-time emotion detection using a webcam or upload an image for analysis.
 
-<p align="center">
+<!-- <p align="center">
   <img src="results/home_page.png" alt="Home Page" width="800">
-</p>
+</p> -->
+
+![Home Page](Home_page.png)
 
 ---
 
@@ -130,9 +132,12 @@ The application allows users to start real-time emotion detection using a webcam
 
 Users are provided with a countdown window to adjust their position before the image is automatically captured for emotion analysis.
 
-<p align="center">
+<!-- <p align="center">
   <img src="results/webcam_capture.png" alt="Webcam Capture" width="800">
-</p>
+</p> -->
+
+![Webcam Capture](webcam.png)
+
 
 ---
 
@@ -140,9 +145,11 @@ Users are provided with a countdown window to adjust their position before the i
 
 The CNN model analyzes the facial expression and predicts the user's emotional state.
 
-<p align="center">
+<!-- <p align="center">
   <img src="results/emotion_detection.png" alt="Emotion Detection" width="800">
-</p>
+</p> -->
+
+![Emotion Detection](emotion_d.png)
 
 ---
 
@@ -150,9 +157,11 @@ The CNN model analyzes the facial expression and predicts the user's emotional s
 
 Based on the detected emotion, the system fetches and plays relevant songs using the YouTube API while also displaying additional recommendations.
 
-<p align="center">
+<!-- <p align="center">
   <img src="results/music_recommendation.png" alt="Music Recommendation" width="800">
-</p>
+</p> -->
+
+![Music Recommendation](music_recommendation.png)
 
 
 ## 📂 Installation & Setup
