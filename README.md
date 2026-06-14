@@ -1,6 +1,6 @@
 ## 📌 Overview
 
-Emotify is an AI-powered emotion-based music recommendation system that uses a custom Convolutional Neural Network (CNN) to detect user emotions and recommend music accordingly. The model is trained on a combination of the FER2013 and CK+48 datasets and can classify seven emotions: Happy, Sad, Angry, Fear, Neutral, Surprise, and Disgust.
+Emotify is an AI-powered emotion-based music recommendation system that uses a custom Convolutional Neural Network (CNN) to detect user emotions and recommend music accordingly. The model is trained on a combination of the FER2013 and CK+48 datasets and can classify seven emotions: Happy, Sad, Angry, Fear, Neutral, and Surprise.
 
 The system offers multiple interaction modes, including image upload, real-time webcam emotion detection, and manual song search. For webcam-based detection, users are given a 7-second adjustment window before image capture. If the captured image is unclear due to poor lighting, motion blur, or facial misalignment, the system automatically retries until a valid image is obtained.
 
@@ -23,7 +23,7 @@ Once an emotion is detected, Emotify uses the YouTube API to fetch and play emot
 - 🧠 Custom CNN-based emotion recognition model
 - 📊 Trained on FER2013 and CK+48 datasets
 - 🎯 90% emotion classification accuracy
-- 😊 Detects 7 emotions in real time
+- 😊 Detects 6 emotions in real time
 - 📸 Webcam-based emotion detection
 - 🔄 Automatic image recapture for invalid frames
 - 🖼️ Local image upload support
@@ -42,7 +42,7 @@ Once an emotion is detected, Emotify uses the YouTube API to fetch and play emot
 3. If the captured image is unclear due to poor lighting, motion blur, or facial misalignment, the system automatically retries the capture process.
 4. The image is preprocessed by resizing and converting it to grayscale.
 5. The preprocessed image is passed to the custom CNN model for emotion classification.
-6. The model identifies one of the seven emotions: Happy, Sad, Angry, Fear, Neutral, Surprise, or Disgust.
+6. The model identifies one of the seven emotions: Happy, Sad, Angry, Fear, Neutral, or Surprise.
 7. The detected emotion and timestamp are stored for mood tracking.
 8. The YouTube API fetches emotion-specific songs and automatically plays a suitable recommendation.
 9. A list of additional recommended songs is displayed for the user.
@@ -191,6 +191,8 @@ Published in:
 🔗 Paper Link:
 
 https://www.ijert.org/emotify-real-time-emotion-based-music-player
+
+---
 
 ## 👨‍💻 Author
 
