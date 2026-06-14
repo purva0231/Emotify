@@ -1,10 +1,9 @@
 ## 📌 Overview
 
-Emotify is an AI-powered emotion-based music recommendation system that uses a custom Convolutional Neural Network (CNN) to detect user emotions and recommend music accordingly. The model is trained on a combination of the FER2013 and CK+48 datasets and can classify seven emotions: Happy, Sad, Angry, Fear, Neutral, and Surprise.
+Emotify is an AI-powered emotion-based music recommendation system that uses a custom CNN model trained on the FER2013 and CK+48 datasets to detect emotions from facial expressions. Users can upload an image, use a webcam for real-time emotion detection, or manually search for songs.
 
-The system offers multiple interaction modes, including image upload, real-time webcam emotion detection, and manual song search. For webcam-based detection, users are given a 7-second adjustment window before image capture. If the captured image is unclear due to poor lighting, motion blur, or facial misalignment, the system automatically retries until a valid image is obtained.
+Once an emotion is identified, the system fetches and plays emotion-specific music using the YouTube API while also logging emotions with timestamps for mood tracking and analysis.
 
-Once an emotion is detected, Emotify uses the YouTube API to fetch and play emotion-specific music while also displaying additional song recommendations. The system further logs detected emotions with timestamps, enabling mood tracking and analysis over time.
 
 ---
 
@@ -20,17 +19,15 @@ Once an emotion is detected, Emotify uses the YouTube API to fetch and play emot
 
   ### ✨ Key Features
 
-- 🧠 Custom CNN-based emotion recognition model
-- 📊 Trained on FER2013 and CK+48 datasets
-- 🎯 90% emotion classification accuracy
-- 😊 Detects 6 emotions in real time
-- 📸 Webcam-based emotion detection
-- 🔄 Automatic image recapture for invalid frames
-- 🖼️ Local image upload support
+- 🧠 Custom CNN emotion recognition model
+- 📊 Trained on FER2013 & CK+48 datasets
+- 🎯 90% classification accuracy
+- 😊 Real-time emotion detection (6 emotions)
+- 📸 Webcam & image upload support
 - 🎵 Emotion-based music recommendations
-- ▶️ YouTube API integration for song playback
-- 🔍 Manual song search option
-- 📈 Emotion and timestamp logging for mood tracking
+- ▶️ YouTube API integration
+- 🔍 Manual song search
+- 📈 Emotion logging for mood tracking
 - ⚡ Lightweight architecture optimized for real-time performance
 
 ---
@@ -75,6 +72,8 @@ The emotion recognition module is powered by a custom Convolutional Neural Netwo
 image
 
 ---
+
+## System Workflow
 
 ```text
 User Input (Image Upload / Webcam)
