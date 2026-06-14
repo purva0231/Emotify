@@ -1,70 +1,216 @@
-# Getting Started with Create React App
+## 📌 Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Emotify is an AI-powered emotion-based music recommendation system that uses a custom Convolutional Neural Network (CNN) to detect user emotions and recommend music accordingly. The model is trained on a combination of the FER2013 and CK+48 datasets and can classify seven emotions: Happy, Sad, Angry, Fear, Neutral, Surprise, and Disgust.
 
-## Available Scripts
+The system offers multiple interaction modes, including image upload, real-time webcam emotion detection, and manual song search. For webcam-based detection, users are given a 7-second adjustment window before image capture. If the captured image is unclear due to poor lighting, motion blur, or facial misalignment, the system automatically retries until a valid image is obtained.
 
-In the project directory, you can run:
+Once an emotion is detected, Emotify uses the YouTube API to fetch and play emotion-specific music while also displaying additional song recommendations. The system further logs detected emotions with timestamps, enabling mood tracking and analysis over time.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🎯 Project Objectives
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Detect user emotions using facial expressions.
+- Classify emotions using a custom CNN model.
+- Recommend music based on the detected emotion.
+- Enable real-time emotion recognition through webcam and image uploads.
+- Deliver a personalized and emotion-aware music experience.
 
-### `npm test`
+  ---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ### ✨ Key Features
 
-### `npm run build`
+- 🧠 Custom CNN-based emotion recognition model
+- 📊 Trained on FER2013 and CK+48 datasets
+- 🎯 90% emotion classification accuracy
+- 😊 Detects 7 emotions in real time
+- 📸 Webcam-based emotion detection
+- 🔄 Automatic image recapture for invalid frames
+- 🖼️ Local image upload support
+- 🎵 Emotion-based music recommendations
+- ▶️ YouTube API integration for song playback
+- 🔍 Manual song search option
+- 📈 Emotion and timestamp logging for mood tracking
+- ⚡ Lightweight architecture optimized for real-time performance
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ How It Works
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. The user can either upload an image, capture an image using a webcam, or manually search for a song.
+2. For webcam mode, the system provides a 7-second adjustment window before capturing the image.
+3. If the captured image is unclear due to poor lighting, motion blur, or facial misalignment, the system automatically retries the capture process.
+4. The image is preprocessed by resizing and converting it to grayscale.
+5. The preprocessed image is passed to the custom CNN model for emotion classification.
+6. The model identifies one of the seven emotions: Happy, Sad, Angry, Fear, Neutral, Surprise, or Disgust.
+7. The detected emotion and timestamp are stored for mood tracking.
+8. The YouTube API fetches emotion-specific songs and automatically plays a suitable recommendation.
+9. A list of additional recommended songs is displayed for the user.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🏗️ System Architecture
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The following architecture illustrates the complete workflow of Emotify, from emotion detection to music recommendation. The system captures user input, processes facial expressions using a CNN model, identifies the detected emotion, and fetches emotion-specific songs through the YouTube API.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+image
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🧠 CNN Model Architecture
 
-### Code Splitting
+The emotion recognition module is powered by a custom Convolutional Neural Network (CNN) designed for efficient real-time emotion classification. The model consists of multiple convolutional and max-pooling layers for feature extraction, followed by fully connected dense layers for emotion prediction.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Model Components
 
-### Analyzing the Bundle Size
+- Conv2D Layers for feature extraction
+- MaxPooling Layers for dimensionality reduction
+- Flatten Layer for feature vector generation
+- Dense Layers for classification
+- Dropout Layer to reduce overfitting
+- Softmax Output Layer for emotion prediction
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+image
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```text
+User Input (Image Upload / Webcam)
+                │
+                ▼
+      Image Processing
+                │
+                ▼
+   CNN Emotion Detection
+                │
+                ▼
+     Emotion Classification
+                │
+                ▼
+      Display Emotion
+                │
+                ▼
+      YouTube API Request
+                │
+                ▼
+     Fetch Emotion-Based Songs
+                │
+                ▼
+   Play Song & Recommend More
+```
+**Emotion Classification**
+   - The system identifies one of the seven emotions:
+     - 😊 Happy
+     - 😔 Sad
+     - 😠 Angry
+     - 😨 Fear
+     - 😐 Neutral
+     - 😲 Surprise
+     
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📂 Installation & Setup
 
-### Deployment
+### Clone the Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+git clone https://github.com/purva0231/Emotify.git
+cd Emotify
+```
 
-### `npm run build` fails to minify
+### Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+```
+
+### Install React Scripts (If Required)
+
+```bash
+npm install react-scripts
+```
+
+### Start the Application
+
+```bash
+npm start
+```
+
+### Open in Browser
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 🛠️ Technologies & Tools Used
+
+| Category | Technology / Tool | Purpose |
+|----------|------------------|---------|
+| **Frontend** | React.js | Building the user interface |
+|  | JavaScript | Client-side functionality and interactions |
+|  | HTML5 | Structuring web pages |
+|  | CSS3 | Styling and responsive design |
+| **Backend** | Python | Backend development and ML implementation |
+| **Deep Learning** | TensorFlow | Building and training the CNN model |
+|  | Keras | High-level API for CNN development |
+| **Computer Vision** | OpenCV | Image processing and facial emotion detection |
+| **Data Processing** | NumPy | Numerical computations and array operations |
+|  | Pandas | Data manipulation and preprocessing |
+| **Machine Learning** | Scikit-learn | Data preprocessing and model evaluation |
+| **Emotion Recognition** | Custom CNN Model | Facial emotion classification |
+| **Datasets** | FER2013 | Facial emotion recognition dataset |
+|  | CK+48 | Facial expression dataset |
+| **API Integration** | YouTube Data API | Fetching emotion-based songs and playlists |
+| **Image Processing** | Grayscale Conversion | Improving computational efficiency |
+|  | Image Resizing | Preparing images for CNN input |
+| **Data Storage** | Text File Logging | Storing emotions with timestamps |
+| **Development Tools** | Visual Studio Code | Code development and debugging |
+|  | Jupyter Notebook | Model training and experimentation |
+| **Version Control** | Git | Source code management |
+|  | GitHub | Project hosting and collaboration |
+| **Hardware** | Webcam | Real-time image capture |
+
+
+
+---
+
+## 📚 Research Reference
+
+
+### Emotify: Real-Time Emotion-Based Music Player
+
+Published in:
+
+**International Journal of Engineering Research & Technology (IJERT)**
+
+🔗 Paper Link:
+
+https://www.ijert.org/emotify-real-time-emotion-based-music-player
+
+## 👨‍💻 Author
+
+### Purva Kalambate
+
+Aspiring Data Analyst and AI Enthusiast passionate about Data Analytics, Machine Learning, Computer Vision, Artificial Intelligence, and building intelligent systems that solve real-world problems.
+
+### Connect With Me
+
+🔗 GitHub: https://github.com/purva0231
+
+🔗 LinkedIn: www.linkedin.com/in/purva31
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub. It helps others discover the project and motivates future development.
+
+---
+
+
+
