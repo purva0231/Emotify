@@ -52,13 +52,15 @@ Once an emotion is identified, the system fetches and plays emotion-specific mus
 
 The following architecture illustrates the complete workflow of Emotify, from emotion detection to music recommendation. The system captures user input, processes facial expressions using a CNN model, identifies the detected emotion, and fetches emotion-specific songs through the YouTube API.
 
-image
+![System Architecture](System%20Architecture.png)
 
 
 
 ## 🧠 CNN Model Architecture
 
 The emotion recognition module is powered by a custom Convolutional Neural Network (CNN) designed for efficient real-time emotion classification. The model consists of multiple convolutional and max-pooling layers for feature extraction, followed by fully connected dense layers for emotion prediction.
+
+![CNN Architecture](CNN%20Architecture.png)
 
 ### Model Components
 
@@ -69,7 +71,7 @@ The emotion recognition module is powered by a custom Convolutional Neural Netwo
 - Dropout Layer to reduce overfitting
 - Softmax Output Layer for emotion prediction
 
-image
+
 
 ---
 
